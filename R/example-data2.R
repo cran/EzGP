@@ -1,0 +1,41 @@
+#' Dataset for the example in function 'LEzGP_fit'
+#'
+#' Data are sampled from the modified math function based on Example 4.2 and Example 4.3 in the paper listed in \code{references}.
+#' There are 9 quantitative factors and 9 qualitative factors each having 3 levels.
+#' In this dataset, there are 8250 data points. For the simplicity of illustration, we take the first 8150 rows as training data points, and the last 100 rows as testing data points.
+#'
+#' @docType data
+#'
+#' @usage data(LEzGP_data)
+#'
+#' @format A named list containing training data and testing data:
+#' \describe{
+#'   \item{"x1-x9"}{1st quantitative factor to the 9th quantitative factor }
+#'   \item{"z1-z9"}{1st qualitative factor to the 9th qualitative factor, which all have 3 levels}
+#'   \item{"ry"}{Response vector}
+#' }
+#'
+#' @keywords example dataset
+#'
+#' @references
+#' \enumerate{
+#' \item "EzGP: Easy-to-Interpret Gaussian Process Models for Computer Experiments with Both Quantitative and Qualitative Factors", Qian Xiao, Abhyuday Mandal, C. Devon Lin, and Xinwei Deng (\doi{10.1137/19M1288462})
+#' }
+#'
+#' @source The dataset can be generated with the code at the end of this description file.
+#'
+#' @examples
+#' data(LEzGP_data)
+#' #Number of quantitative factors
+#' p = 9
+#' #Number of qualitative factors
+#' q = 9
+#' #Vector containing numbers of levels in qualitative factors
+#' m=rep(3,9)
+#' # Nugget
+#' tau = 0
+#'
+#' X = LEzGP_data[1:8150, 1:(p+q)]
+#' Y = LEzGP_data[1:8150, p+q+1]
+#' X_new = LEzGP_data[8151:8250, 1:(p+q)]
+"LEzGP_data"
